@@ -1,0 +1,40 @@
+<html>
+<head>
+    <link  rel="stylesheet" type="text/css" href="Style/Main.css"/>
+    <title>Casper's Lego</title>
+    <link rel="shortcut icon" href="Media/Lego_Brick.png" type="image/x-icon">
+    <meta name="description" content="Casper's lego een Bibliotheek van Caspers Lego creaties, technieken en Foto's van zijn Legoworld tafels, MOC">
+</head>
+<body>
+<div class="banner"><img src="Media/logo.png" class="logo" alt="Casper's Lego"></div>
+<div class="subbanner"><h1>WELKOM OP CASPER'S LEGO WEBSITE, HIER VIND JE AL MIJN LEGO BOUWERKEN.</h1></div>
+<div class="main">
+<a class="subdiv" id="rood" href="Legoworld.html"><div class="pic1" ><div class="text">LEGO WORLD</div></div></a>
+<a class="subdiv" id="geel" href="Specials.html"><div class="pic2"><div class="text">SPECIALS</div></div></a>
+<a class="subdiv" id="groen" href="Collectie.html"><div class="pic3"><div class="text">COLLECTIE</div></div></a>
+<a class="subdiv" id="grijs" href="Techniek.html"><div class="pic4"><div class="text">TECHNIEK</div></div></a>
+</div>
+    <div class="footer" id="grijs">
+        <h1><a href="Contact.html">CONTACT</a></h1>
+    </div>
+<script>
+window.addEventListener('load',checkwidth);
+
+ function checkwidth(){
+   if(window.innerWidth > 1300){
+       document.getElementById('rood').style.marginLeft = "13%";
+       document.getElementById('geel').style.marginLeft = "13%";
+       document.getElementById('groen').style.marginLeft = "13%";
+       document.getElementById('grijs').style.marginLeft = "13%";
+   }else{
+       document.getElementById('rood').style.marginLeft = "20%";
+       document.getElementById('geel').style.marginLeft = "20%";
+       document.getElementById('groen').style.marginLeft = "20%";
+       document.getElementById('grijs').style.marginLeft = "20%";
+   }
+
+ }
+
+</script>
+</body>
+</html>

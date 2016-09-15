@@ -1,0 +1,146 @@
+<html>
+    <head>
+    <link  rel="stylesheet" type="text/css" href="Style/Libary.css"/>
+    <title>Legoworld 2011 - Casper's Lego</title>
+    <link rel="shortcut icon" href="Media/Lego_Brick.png" type="image/x-icon">
+    <meta name="description" content="Foto's van 2011 Legoworld van Casper, MOC">
+    </head>
+
+    <body id="body">
+    <div class="banner" id="banner">
+        <div class="banner">
+            <a href="Index.html">
+                <img src="Media/logo.png" class="logo" alt="Casper's Lego">
+            </a>
+        </div>
+    </div>
+        <div class="subbanner">
+            <div class="subBannerText" id="subBannerText">
+                
+            </div>
+        </div>
+    
+    <div class="menu" id="menu">
+        <h1>
+            <a href="Legoworld.html">LEGOWORLD</a>
+        </h1>
+        <h2> 
+            <img src="Media/pinn.png" height="1.5%"/>
+            <a href="Legoworld2011.html">2011</a>
+            <br> 
+        </h2>
+        <h2>
+            <a href="Legoworld2012.html">2012</a>
+            <br>
+        </h2>
+        <h2>
+            <a href="Legoworld2013.html">2013</a>
+            <br>
+        </h2>
+        <h2>    
+            <a href="Legoworld2014.html">2014</a>
+            <br>
+        </h2>
+        <h2>    
+            <a href="Legoworld2015.html">2015</a>
+            <br>
+        </h2>
+        <h2>    
+            <a href="Legoworld2016.html">2016</a>
+            <br>
+        </h2>
+        <div class="menuback">
+            <h3>
+                <a href="Specials.html">SPECIALS</a>
+            </h3>
+            <br>
+            <h3>
+                <a href="collectie.html">COLLECTIE</a>
+            </h3>
+            <br>
+            <h3>
+                <a href="Techniek.html">TECHNIEK</a>
+            </h3>
+        </div>
+    </div>
+    <div class="slider" id="slider">
+        <div class="canvas1"id="canvas1">
+            <img class="LibaryImg" id="Img1" src="#"/>
+            </div>
+        <div class="canvas2"id="canvas2">
+            <img class="LibaryImg" id="Img2"src="#"/>
+            </div>
+        <div class="sliderMenu"id="sliderMenu">
+            VOLGENDE
+            </div>
+    </div>
+    
+        <script>
+        var pictures =["20111.jpg","20112.jpg","20113.jpg","20114.jpg","20115.jpg","20116.jpg","20117.jpg"];
+        var count = 1;
+        var maxCount = pictures.length - 1;
+        var ImgOneSrc = document.getElementById("Img1").style.src;
+        var ImgTwoSrc = document.getElementById("Img2").style.src;
+        var triggerd = false;
+        window.addEventListener('load', startSlider);
+        window.addEventListener('load',check);
+        document.getElementById('sliderMenu').addEventListener('click',sliderNext);
+            
+        function startSlider(){
+            document.getElementById('subBannerText').innerHTML = "LEGOWORLD 2011";
+                console.log('pop');
+            document.getElementById('Img1').src = "Media/" + pictures[0];
+            document.getElementById("Img2").src = "Media/" + pictures[1];
+            }
+            
+        function check(){ 
+            document.getElementById('body').style.height = window.innerHeight;
+            if(window.innerWidth > 1300){
+                sliderWidth = window.innerWidth * 0.9 - 180;
+                document.getElementById('slider').style.width = sliderWidth; 
+       }else{
+           container = document.getElementById('slider').style;
+           menu = document.getElementById('menu').style;
+           img1 = document.getElementById('canvas1').style;
+           img2 = document.getElementById('canvas2').style;
+           sliderMenu = document.getElementById('sliderMenu').style;
+           this.menu.display = 'none';
+           this.container.width = window.innerWidth;
+           this.container.marginTop = '85px';
+           this.container.marginLeft = '0';
+           this.img1.marginLeft = '1%';
+           this.img1.width = '90%';
+           this.img2.marginLeft = '1%';
+           this.img2.width = '90%';
+           this.sliderMenu.paddingTop ="90%";
+       }
+
+     }
+
+        function sliderNext(){
+            console.log("kaas");
+            if(count == maxCount){
+                count = -1;
+            }
+            if(triggerd){
+                document.getElementById("canvas2").style.opacity = 0;
+                document.getElementById("canvas1").style.opacity = 1;
+                count++;
+                setTimeout(1000,nextPic("Img2"));
+                triggerd = false;
+            }else{
+                document.getElementById("canvas2").style.opacity = 1;
+                document.getElementById("canvas1").style.opacity = 0;
+                count++;
+                setTimeout(1000,nextPic("Img1"));
+                triggerd = true;
+            }
+            
+        } 
+            function nextPic(canvas){
+                document.getElementById(canvas).src = "Media/" + pictures[count];
+            
+            }
+        </script>
+    </body>
+</html>
